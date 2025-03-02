@@ -15,11 +15,13 @@ public class JavaInterviewQuestionsApplication {
 		SpringApplication.run(JavaInterviewQuestionsApplication.class, args);
 	}
 
+	// tag::myMethod[]
 	@Bean
 	@ApplicationScope
 	
 	public Employee getEmployee(){
 		return new Employee("name");
 	}
+	 // end::myMethod[]
 
 }
