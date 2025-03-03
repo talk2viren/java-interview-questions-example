@@ -8,20 +8,14 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.context.annotation.ApplicationScope;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class JavaInterviewQuestionsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavaInterviewQuestionsApplication.class, args);
 	}
 
-	// tag::myMethod[]
-	@Bean
-	@ApplicationScope
-	
-	public Employee getEmployee(){
-		return new Employee("name");
-	}
+
 	 // end::myMethod[]
 
 }

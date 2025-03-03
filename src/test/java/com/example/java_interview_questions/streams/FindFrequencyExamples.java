@@ -6,15 +6,14 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 //Number and List Functions
 
-public class Example1 {
+public class FindFrequencyExamples {
 
-    // Type 1:   Fine frequency of character of string
+    // Type 1:   How Find frequency of character of string
     @Test
-    public void test_1() {
+    public void example_1() {
         String name = "virendra";
 
         char[] charArray = name.toCharArray();
@@ -32,7 +31,7 @@ public class Example1 {
 
     // Type 2:   Fine frequency of character of string
     @Test
-    public void test_2() {
+    public void example_2() {
         String name = "virendra";
         name.codePoints().mapToObj(x -> (char) x)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
@@ -43,47 +42,6 @@ public class Example1 {
 
     }
 
-    // Reverse String
-    @Test
-    public void test_3() {
-        String str = "virendra";
-
-        StringBuilder sb = new StringBuilder();
-        IntStream
-                .iterate(str.length() - 1, (x) -> x - 1)
-                .limit(str.length())
-                .mapToObj(x -> str.toCharArray()[x])
-                .forEach(x -> sb.append(x));
-
-        System.out.println(sb);
-    }
-
-    // Reverse String
-    @Test
-    public void test_4() {
-        String str = "my name is virendra";
-        StringBuilder builder=new StringBuilder();
-        Arrays.stream(str.split(" "))
-                .forEach(token ->{
-                    builder.insert(0," "+ token);
-                });
-
-        System.out.println(builder);
-    }
-
-    // Reverse String
-    @Test
-    public void test_5() {
-        String str = "my name is virendra";
-        StringTokenizer tokenizer=new StringTokenizer(str);
-
-        StringBuilder builder=new StringBuilder();
-        while (tokenizer.hasMoreTokens()){
-            builder.insert(0," "+tokenizer.nextToken());
-        }
-
-        System.out.println(builder);
-    }
 
 //    Option 1: Find the Maximum Number and Minimum Number in a List
     @Test
@@ -163,4 +121,8 @@ public class Example1 {
         List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
         numbers.stream().distinct().forEach(System.out::println);
     }
-    }
+
+    @Test
+    void test_14() {
+        System.out.println("test 14");
+    }}
